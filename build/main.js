@@ -1,5 +1,66 @@
 webpackJsonp([35],{
 
+/***/ 102:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Info; });
+var Info = /** @class */ (function () {
+    function Info() {
+    }
+    /**/
+    /*
+      public static backendUrl = "https://demobackend.clinetplatforms.com/backend";
+      public static apiURL = "https://demo.clinetplatforms.com/api";
+      public static testOtpKeyUrl = "https://demo.clinetplatforms.com/files/template/";
+      /**/
+    /*
+        public static backendUrl = "https://devbackend.clinetplatforms.com/backend";
+        public static apiURL = "https://dev.clinetplatforms.com/api";
+        public static testOtpKeyUrl = "https://demo.clinetplatforms.com/files/template/";
+        /**/
+    /**
+     * Returns the full path for the api or backend service,
+     * combining the main url of each service with the path specified.
+     * @param path The URI path that you want to merge
+     * @param api Set to true if the URI is on the API service, false if the URI is on the backend/drupal service. Default: false
+     */
+    Info.merge = function (path, api) {
+        if (api === void 0) { api = false; }
+        return (api ? this.apiURL : this.backendUrl()) + path;
+    };
+    Info.backendUrl = function () {
+        if (this.debug == true) {
+            return this.backendUrlDev;
+        }
+        else {
+            return this.backendUrlProd;
+        }
+    };
+    Info.debug = !true;
+    /*This is the main repository for the WZK app*/
+    /*
+    public static backendUrl = "http://backend.clinetplatforms.com/backend";
+    public static apiURL = "https://api.clinetplatforms.com:8243";
+    public static testOtpKeyUrl = "https://api.clinetplatforms.com/files/template/";
+    /**/
+    // Internal project ID
+    Info.projectId = "wzk";
+    Info.backendUrlProd = "https://wappbackend.wz-kliniken.de/backend";
+    Info.backendUrlDev = "http://clinet.drupal.local";
+    Info.backendOauthClientId = "6349e81a-5e76-4398-ad31-2c62e76b5834";
+    Info.backendOauthClientPassword = "qqUefZtu2f4GsWwk";
+    Info.backendOauthClientScope = "app";
+    Info.apiURL = "https://wappapi.wz-kliniken.de/api";
+    Info.testOtpKeyUrl = "https://wappapi.wz-kliniken.de/files/template/";
+    Info.showCalendarAfter = new Date('2021-03-01 00:00:01');
+    return Info;
+}());
+
+//# sourceMappingURL=statics.js.map
+
+/***/ }),
+
 /***/ 108:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -232,11 +293,11 @@ var ElectronProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__storage_manager_storage_manager__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__gui_manager_gui_manager__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__api_api__ = __webpack_require__(48);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__otp_otp__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_file__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__otp_otp__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_file__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ionic_angular__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__platform_manager_platform_manager__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__link_manager_link_manager__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__link_manager_link_manager__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12_moment__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__pages_checkin_conditions__ = __webpack_require__(453);
@@ -1170,13 +1231,13 @@ var CheckinServiceProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__api_api__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__file_modal__ = __webpack_require__(622);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__electron_electron__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_is_cordova_available__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__services_is_cordova_available__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__storage_manager_storage_manager__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__gui_manager_gui_manager__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_http__ = __webpack_require__(35);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ionic_native_file__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__ionic_native_file_opener__ = __webpack_require__(399);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__otp_otp__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__otp_otp__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12_ionic_angular__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__platform_manager_platform_manager__ = __webpack_require__(54);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1854,7 +1915,7 @@ var DrawProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_native_firebase__ = __webpack_require__(185);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__api_api__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__electron_electron__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_is_cordova_available__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__services_is_cordova_available__ = __webpack_require__(80);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2217,11 +2278,11 @@ var map = {
 		30
 	],
 	"../pages/draw/draw.module": [
-		670,
+		669,
 		29
 	],
 	"../pages/email-confirmation/email-confirmation.module": [
-		669,
+		670,
 		28
 	],
 	"../pages/file-upload/file-upload.module": [
@@ -2229,11 +2290,11 @@ var map = {
 		27
 	],
 	"../pages/food-card/food-card.module": [
-		672,
+		673,
 		26
 	],
 	"../pages/imprint/imprint.module": [
-		673,
+		672,
 		25
 	],
 	"../pages/info-item/info-item.module": [
@@ -2241,11 +2302,11 @@ var map = {
 		24
 	],
 	"../pages/info-list/info-list.module": [
-		675,
+		676,
 		4
 	],
 	"../pages/intro-slider/intro-slider.module": [
-		676,
+		675,
 		23
 	],
 	"../pages/login/login.module": [
@@ -2265,7 +2326,7 @@ var map = {
 		21
 	],
 	"../pages/news-list/news-list.module": [
-		681,
+		683,
 		0
 	],
 	"../pages/news/news.module": [
@@ -2273,7 +2334,7 @@ var map = {
 		20
 	],
 	"../pages/password-reset/password-reset.module": [
-		683,
+		681,
 		19
 	],
 	"../pages/privacy/privacy.module": [
@@ -2285,11 +2346,11 @@ var map = {
 		17
 	],
 	"../pages/start-text/start-text.module": [
-		686,
+		687,
 		16
 	],
 	"../pages/text/text.module": [
-		687,
+		686,
 		15
 	],
 	"../pages/therapy-entry/therapy-entry.module": [
@@ -2309,11 +2370,11 @@ var map = {
 		11
 	],
 	"../pages/user-settings-create-account/user-settings-create-account.module": [
-		692,
+		693,
 		10
 	],
 	"../pages/user-settings-fingerprint-activation/user-settings-fingerprint-activation.module": [
-		693,
+		692,
 		9
 	],
 	"../pages/user-settings-message-center/user-settings-message-center.module": [
@@ -2321,11 +2382,11 @@ var map = {
 		8
 	],
 	"../pages/user-settings-push-notification/user-settings-push-notification.module": [
-		695,
+		696,
 		7
 	],
 	"../pages/user-settings-refill-keys/user-settings-refill-keys.module": [
-		696,
+		695,
 		6
 	],
 	"../pages/user-settings/user-settings.module": [
@@ -2444,7 +2505,7 @@ var StorageManagerProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__link_manager_link_manager__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__link_manager_link_manager__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(108);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2871,10 +2932,13 @@ var GuiManagerProvider = /** @class */ (function () {
         this.showPopupMessage("Sie wurden ausgeloggt", "Zu Ihrer Sicherheit wurden Sie aufgrund einer Inaktivität von 20 Minuten automatisch aus der Anwendung ausgeloggt.\n" +
             "Sie können sich wieder einloggen, indem Sie die Login-Seite besuchen.", function () { }, false);
     };
-    var _a, _b, _c, _d, _e;
     GuiManagerProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ToastController */]) === "function" ? _a : Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* LoadingController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* LoadingController */]) === "function" ? _b : Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */]) === "function" ? _c : Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__link_manager_link_manager__["a" /* LinkManagerProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__link_manager_link_manager__["a" /* LinkManagerProvider */]) === "function" ? _d : Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* App */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* App */]) === "function" ? _e : Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["q" /* ToastController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* LoadingController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */],
+            __WEBPACK_IMPORTED_MODULE_3__link_manager_link_manager__["a" /* LinkManagerProvider */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* App */]])
     ], GuiManagerProvider);
     return GuiManagerProvider;
 }());
@@ -3188,7 +3252,7 @@ var TouchManagerProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__api_api__ = __webpack_require__(48);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_moment__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_is_cordova_available__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_is_cordova_available__ = __webpack_require__(80);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__auth_manager_auth_manager__ = __webpack_require__(55);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__platform_manager_platform_manager__ = __webpack_require__(54);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -4205,7 +4269,7 @@ var DebuggerProvider = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalContentPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_link_manager_link_manager__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_link_manager_link_manager__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(35);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -4294,7 +4358,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_statics__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_statics__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__storage_manager_storage_manager__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_util_isObject__ = __webpack_require__(613);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_util_isObject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_rxjs_util_isObject__);
@@ -4661,10 +4725,10 @@ var PlatformManagerProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__file_manager_file_manager__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__storage_manager_storage_manager__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__gui_manager_gui_manager__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__otp_otp__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__otp_otp__ = __webpack_require__(79);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__messages_messages__ = __webpack_require__(181);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__checkin_service_checkin_service__ = __webpack_require__(110);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_statics__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__services_statics__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5217,8 +5281,8 @@ var AuthManagerProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_touch_manager_touch_manager__ = __webpack_require__(450);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__ionic_native_touch_id__ = __webpack_require__(403);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_android_fingerprint_auth__ = __webpack_require__(404);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_otp_otp__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_file__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__providers_otp_otp__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_file__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_file_manager_file_manager__ = __webpack_require__(111);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__providers_electron_electron__ = __webpack_require__(109);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ionic_native_file_opener__ = __webpack_require__(399);
@@ -5238,7 +5302,7 @@ var AuthManagerProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__ionic_native_phonegap_local_notification__ = __webpack_require__(401);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__ionic_native_firebase__ = __webpack_require__(185);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__providers_platform_manager_platform_manager__ = __webpack_require__(54);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__providers_link_manager_link_manager__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__providers_link_manager_link_manager__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__providers_activity_tracker_activity_tracker__ = __webpack_require__(186);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__providers_form_manager_form_manager__ = __webpack_require__(402);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__angular_fire__ = __webpack_require__(406);
@@ -5320,34 +5384,34 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/checkin/checkin.module#CheckinPageModule', name: 'CheckinPage', segment: 'checkin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/debugger/debugger.module#DebuggerPageModule', name: 'DebuggerPage', segment: 'debugger', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/document/document.module#DocumentPageModule', name: 'DocumentPage', segment: 'document', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/email-confirmation/email-confirmation.module#EmailConfirmationPageModule', name: 'EmailConfirmation', segment: 'email-confirmation', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/draw/draw.module#DrawPageModule', name: 'DrawPage', segment: 'draw', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/email-confirmation/email-confirmation.module#EmailConfirmationPageModule', name: 'EmailConfirmation', segment: 'email-confirmation', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/file-upload/file-upload.module#FileUploadPageModule', name: 'FileUploadPage', segment: 'file-upload', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/food-card/food-card.module#FoodCardPageModule', name: 'FoodCardPage', segment: 'food-card', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/imprint/imprint.module#ImprintPageModule', name: 'ImprintPage', segment: 'imprint', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/food-card/food-card.module#FoodCardPageModule', name: 'FoodCardPage', segment: 'food-card', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/info-item/info-item.module#InfoItemPageModule', name: 'InfoItemPage', segment: 'info-item', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/info-list/info-list.module#InfoListPageModule', name: 'InfoListPage', segment: 'info-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/intro-slider/intro-slider.module#IntroSliderPageModule', name: 'IntroSliderPage', segment: 'intro-slider', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/info-list/info-list.module#InfoListPageModule', name: 'InfoListPage', segment: 'info-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/map/map.module#MapPageModule', name: 'MapPage', segment: 'map', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/message-center/message-center.module#MessageCenterPageModule', name: 'MessageCenterPage', segment: 'message-center', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/news-item/news-item.module#NewsItemPageModule', name: 'NewsItemPage', segment: 'news-item', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/news-list/news-list.module#NewsListPageModule', name: 'NewsListPage', segment: 'news-list', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/news/news.module#NewsPageModule', name: 'NewsPage', segment: 'news', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/password-reset/password-reset.module#PasswordResetPageModule', name: 'PasswordResetPage', segment: 'password-reset', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/news/news.module#NewsPageModule', name: 'NewsPage', segment: 'news', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/news-list/news-list.module#NewsListPageModule', name: 'NewsListPage', segment: 'news-list', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/privacy/privacy.module#PrivacyPageModule', name: 'PrivacyPage', segment: 'privacy', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/start-filter/start-filter.module#StartFilterPageModule', name: 'StartFilterPage', segment: 'start-filter', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/start-text/start-text.module#StartTextPageModule', name: 'StartTextPage', segment: 'start-text', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/text/text.module#TextPageModule', name: 'TextPage', segment: 'text', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/start-text/start-text.module#StartTextPageModule', name: 'StartTextPage', segment: 'start-text', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/therapy-entry/therapy-entry.module#TherapyEntryPageModule', name: 'TherapyEntryPage', segment: 'therapy-entry', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tos/tos.module#TosPageModule', name: 'TosPage', segment: 'tos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/user-settings-account-information/user-settings-account-information.module#UserSettingsAccountInformationPageModule', name: 'UserSettingsAccountInformationPage', segment: 'user-settings-account-information', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/user-settings-change-password/user-settings-change-password.module#UserSettingsChangePasswordPageModule', name: 'UserSettingsChangePasswordPage', segment: 'user-settings-change-password', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/user-settings-create-account/user-settings-create-account.module#UserSettingsCreateAccountPageModule', name: 'UserSettingsCreateAccountPage', segment: 'user-settings-create-account', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/user-settings-fingerprint-activation/user-settings-fingerprint-activation.module#UserSettingsFingerprintActivationPageModule', name: 'UserSettingsFingerprintActivationPage', segment: 'user-settings-fingerprint-activation', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/user-settings-create-account/user-settings-create-account.module#UserSettingsCreateAccountPageModule', name: 'UserSettingsCreateAccountPage', segment: 'user-settings-create-account', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/user-settings-message-center/user-settings-message-center.module#UserSettingsMessageCenterPageModule', name: 'UserSettingsMessageCenterPage', segment: 'user-settings-message-center', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/user-settings-push-notification/user-settings-push-notification.module#UserSettingsPushNotificationPageModule', name: 'UserSettingsPushNotificationPage', segment: 'user-settings-push-notification', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/user-settings-refill-keys/user-settings-refill-keys.module#UserSettingsRefillKeysPageModule', name: 'UserSettingsRefillKeysPage', segment: 'user-settings-refill-keys', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/user-settings-push-notification/user-settings-push-notification.module#UserSettingsPushNotificationPageModule', name: 'UserSettingsPushNotificationPage', segment: 'user-settings-push-notification', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/user-settings/user-settings.module#UserSettingsPageModule', name: 'UserSettingsPage', segment: 'user-settings', priority: 'low', defaultHistory: [] }
                     ]
                 }),
@@ -6612,70 +6676,9 @@ var environment = {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Info; });
-var Info = /** @class */ (function () {
-    function Info() {
-    }
-    /**/
-    /*
-      public static backendUrl = "https://demobackend.clinetplatforms.com/backend";
-      public static apiURL = "https://demo.clinetplatforms.com/api";
-      public static testOtpKeyUrl = "https://demo.clinetplatforms.com/files/template/";
-      /**/
-    /*
-        public static backendUrl = "https://devbackend.clinetplatforms.com/backend";
-        public static apiURL = "https://dev.clinetplatforms.com/api";
-        public static testOtpKeyUrl = "https://demo.clinetplatforms.com/files/template/";
-        /**/
-    /**
-     * Returns the full path for the api or backend service,
-     * combining the main url of each service with the path specified.
-     * @param path The URI path that you want to merge
-     * @param api Set to true if the URI is on the API service, false if the URI is on the backend/drupal service. Default: false
-     */
-    Info.merge = function (path, api) {
-        if (api === void 0) { api = false; }
-        return (api ? this.apiURL : this.backendUrl()) + path;
-    };
-    Info.backendUrl = function () {
-        if (this.debug == true) {
-            return this.backendUrlDev;
-        }
-        else {
-            return this.backendUrlProd;
-        }
-    };
-    Info.debug = !true;
-    /*This is the main repository for the WZK app*/
-    /*
-    public static backendUrl = "http://backend.clinetplatforms.com/backend";
-    public static apiURL = "https://api.clinetplatforms.com:8243";
-    public static testOtpKeyUrl = "https://api.clinetplatforms.com/files/template/";
-    /**/
-    // Internal project ID
-    Info.projectId = "wzk";
-    Info.backendUrlProd = "https://wappbackend.wz-kliniken.de/backend";
-    Info.backendUrlDev = "http://clinet.drupal.local";
-    Info.backendOauthClientId = "6349e81a-5e76-4398-ad31-2c62e76b5834";
-    Info.backendOauthClientPassword = "qqUefZtu2f4GsWwk";
-    Info.backendOauthClientScope = "app";
-    Info.apiURL = "https://wappapi.wz-kliniken.de/api";
-    Info.testOtpKeyUrl = "https://wappapi.wz-kliniken.de/files/template/";
-    Info.showCalendarAfter = new Date('2021-03-01 00:00:01');
-    return Info;
-}());
-
-//# sourceMappingURL=statics.js.map
-
-/***/ }),
-
-/***/ 79:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LinkManagerProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_statics__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_statics__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -6798,7 +6801,7 @@ var LinkManagerProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 80:
+/***/ 79:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6807,11 +6810,11 @@ var LinkManagerProvider = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_file__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_file__ = __webpack_require__(81);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_ionic_angular__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__storage_manager_storage_manager__ = __webpack_require__(39);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_is_cordova_available__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_statics__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_is_cordova_available__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_statics__ = __webpack_require__(102);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__gui_manager_gui_manager__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__platform_manager_platform_manager__ = __webpack_require__(54);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -7443,7 +7446,7 @@ var OtpProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 81:
+/***/ 80:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
